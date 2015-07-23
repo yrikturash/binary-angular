@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="phonecatApp">
+<html lang="en" ng-app="app">
 <head>
   <meta charset="utf-8">
   <title>My HTML File</title>
@@ -15,40 +15,56 @@
 
   <link rel="stylesheet" href="css/app.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-</head>
-<body ng-controller="PhoneListCtrl as ctrl" ng-cloak>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.min.js"></script>
+  </head>
+<body ng-controller="WebService as ctrl" ng-cloak>
 <div class="container">
+<div my-dom-directive>Click Me!</div>
+    <div class="row">
 
-        <div class="row">
-
-            <div class="col-lg-12">
-                <h1 class="page-header">Thumbnail Gallery</h1>
+        <div class="col-lg-12">
+            <h2 class="page-header">By $http.get</h2>
+        </div>
+        <div class="items">
+        	<div class="col-lg-2 col-md-3 col-xs-5 thumb" ng-repeat="x in ctrl.photosArray"  >
+                <a class="thumbnail" href="#" url="{{x.url}}" ng-Preview >
+                    <img class="img-responsive" src="{{x.thumbnailUrl}}" alt="{{x.title}}" >
+                </a>
+                <span>{{x.title}}</span>
             </div>
+        </div>
+	
+        
+    </div>
+    <div class="row">
 
-            <div class="items">
-            	<div class="col-lg-2 col-md-3 col-xs-5 thumb" ng-repeat="x in ctrl.photosArray">
-	                <a class="thumbnail" href="{{x.url}}">
-	                    <img class="img-responsive" src="{{x.thumbnailUrl}}" alt="{{x.title}}">
-	                </a>
-	                <span>{{x.title}}</span>
-	            </div>
+        <div class="col-lg-12">
+            <h2 class="page-header">By $resource</h2>
+        </div>
+        <div class="items">
+        	<div class="col-lg-2 col-md-3 col-xs-5 thumb" ng-repeat="x in ctrl.photosArray2">
+                <a class="thumbnail" url="{{x.url}}"  ng-Preview>
+                    <img class="img-responsive" src="{{x.thumbnailUrl}}" alt="{{x.title}}">
+                </a>
+                <span>{{x.title}}</span>
             </div>
-
-            
         </div>
 
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright © Binary-Angular-Task 2015</p>
-                </div>
-            </div>
-        </footer>
-
+        
     </div>
+
+    <hr>
+
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright © Binary-Angular-Task 2015</p>
+            </div>
+        </div>
+    </footer>
+
+</div>
 
 
 
