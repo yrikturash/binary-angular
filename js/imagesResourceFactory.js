@@ -2,7 +2,7 @@
 //-------------- service for $resource -----------------------------//
 (function() {
     'use strict';	
-	app.factory('imagesResource', function($resource) {
+	angular.module('app').factory('imagesResource', function($resource) {
 	    return $resource('http://jsonplaceholder.typicode.com/photos/', {
 	    }, {
 	        get: {
