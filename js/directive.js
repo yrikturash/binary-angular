@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    app.directive('ngPreview', function() {
+    angular.module('app').directive('ngPreview', function() {
         return {
             link: function($scope, element, attrs) {
                 element.bind('click', function() {
