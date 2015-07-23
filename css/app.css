@@ -1,0 +1,22 @@
+.items span {
+  display: block;
+  height: 40px;
+  margin-bottom: 10px;
+  position: relative;
+  bottom: 15px;
+  overflow-y: hidden;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.items div {
+  color: #777;
+	
+}
+
+.items div:hover {
+  	color: #000;
+	transition: color .2s ease-in-out;
+	
+}
+
